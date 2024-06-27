@@ -1,0 +1,146 @@
+name: netbrain
+
+mgmt:
+  network: fixedips
+  ipv4-subnet: 172.30.5.0/24
+  ipv6-subnet: 2001:172:30:5::/80
+
+topology:
+  nodes:
+    SP1R1:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.201
+      mgmt-ipv6: 2001:172:30:5::201
+      startup-config: netbrain_config/xr01.cfg
+
+    SP1R2:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.202
+      mgmt-ipv6: 2001:172:30:5::202
+      startup-config: netbrain_config/xr02.cfg
+
+    SP1R3:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.203
+      mgmt-ipv6: 2001:172:30:5::203
+      #startup-config: netbrain_config/xr03.cfg
+
+    SP1R4:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.204
+      mgmt-ipv6: 2001:172:30:5::204
+      startup-config: netbrain_config/xr04.cfg
+
+    SP1R5:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.205
+      mgmt-ipv6: 2001:172:30:5::205
+      startup-config: netbrain_config/xr05.cfg
+
+        
+    SP2R1:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.206
+      mgmt-ipv6: 2001:172:30:5::206
+      startup-config: netbrain_config/xr05.cfg
+
+    SP2R2:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.207
+      mgmt-ipv6: 2001:172:30:5::207
+      startup-config: netbrain_config/xr05.cfg
+
+    SP2R3:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.208
+      mgmt-ipv6: 2001:172:30:5::208
+      startup-config: netbrain_config/xr05.cfg
+
+    SP2R4:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.209
+      mgmt-ipv6: 2001:172:30:5::209
+      startup-config: netbrain_config/xr05.cfg
+
+    SP2R5:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.210
+      mgmt-ipv6: 2001:172:30:5::210
+      startup-config: netbrain_config/xr05.cfg
+
+    LEFT6:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.211
+      mgmt-ipv6: 2001:172:30:5::211
+      startup-config: netbrain_config/xr05.cfg
+
+    LEFT7:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.212
+      mgmt-ipv6: 2001:172:30:5::212
+      startup-config: netbrain_config/xr05.cfg
+
+    RIGHT6:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.213
+      mgmt-ipv6: 2001:172:30:5::213
+      startup-config: netbrain_config/xr05.cfg
+
+    RIGHT7:
+      kind: cisco_xrd
+      image: ios-xr/xrd-control-plane:7.9.2
+      mgmt-ipv4: 172.30.5.214
+      mgmt-ipv6: 2001:172:30:5::214
+      startup-config: netbrain_config/xr05.cfg
+
+  links:
+    - endpoints: ["SP1R1:Gi0-0-0-0", "SP1R4:Gi0-0-0-0"]
+    - endpoints: ["SP1R1:Gi0-0-0-1", "LEFT6:Gi0-0-0-1"]
+    - endpoints: ["SP1R1:Gi0-0-0-2", "SP1R2:Gi0-0-0-2"]
+    - endpoints: ["SP1R1:Gi0-0-0-3", "SP1R5:Gi0-0-0-3"]
+    - endpoints: ["SP1R1:Gi0-0-0-4", "LEFT7:Gi0-0-0-4"]
+    - endpoints: ["SP1R1:Gi0-0-0-5", "SP1R3:Gi0-0-0-5"]
+
+    - endpoints: ["SP1R2:Gi0-0-0-0", "SP1R3:Gi0-0-0-0"]
+    - endpoints: ["SP1R2:Gi0-0-0-1", "LEFT7:Gi0-0-0-1"]
+    - endpoints: ["SP1R2:Gi0-0-0-4", "LEFT6:Gi0-0-0-4"]
+    - endpoints: ["SP1R2:Gi0-0-0-5", "SP1R4:Gi0-0-0-5"]
+   
+    - endpoints: ["SP1R3:Gi0-0-0-1", "SP2R3:Gi0-0-0-1"]
+    - endpoints: ["SP1R3:Gi0-0-0-2", "SP1R4:Gi0-0-0-2"]
+    - endpoints: ["SP1R3:Gi0-0-0-4", "SP1R5:Gi0-0-0-4"]
+
+    - endpoints: ["SP1R4:Gi0-0-0-1", "SP2R4:Gi0-0-0-1"]
+   
+    - endpoints: ["LEFT6:Gi0-0-0-3", "LEFT7:Gi0-0-0-3"]
+
+
+    - endpoints: ["SP2R1:Gi0-0-0-0", "SP2R4:Gi0-0-0-0"]
+    - endpoints: ["SP2R1:Gi0-0-0-1", "RIGHT6:Gi0-0-0-1"]
+    - endpoints: ["SP2R1:Gi0-0-0-2", "SP2R2:Gi0-0-0-2"]
+    - endpoints: ["SP2R1:Gi0-0-0-3", "SP2R5:Gi0-0-0-3"]
+    - endpoints: ["SP2R1:Gi0-0-0-4", "RIGHT7:Gi0-0-0-4"]
+    - endpoints: ["SP2R1:Gi0-0-0-5", "SP2R3:Gi0-0-0-5"]
+
+    - endpoints: ["SP2R2:Gi0-0-0-0", "SP2R3:Gi0-0-0-0"]
+    - endpoints: ["SP2R2:Gi0-0-0-1", "RIGHT7:Gi0-0-0-1"]
+    - endpoints: ["SP2R2:Gi0-0-0-4", "RIGHT6:Gi0-0-0-4"]
+    - endpoints: ["SP2R2:Gi0-0-0-5", "SP2R4:Gi0-0-0-5"]
+   
+    - endpoints: ["SP2R3:Gi0-0-0-2", "SP2R4:Gi0-0-0-2"]
+    - endpoints: ["SP2R3:Gi0-0-0-4", "SP2R5:Gi0-0-0-4"]
+   
+    - endpoints: ["RIGHT6:Gi0-0-0-3", "RIGHT7:Gi0-0-0-3"]
