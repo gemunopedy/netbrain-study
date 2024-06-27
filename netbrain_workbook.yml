@@ -12,35 +12,35 @@ topology:
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.201
       mgmt-ipv6: 2001:172:30:5::201
-      startup-config: netbrain_config/xr01.cfg
+      startup-config: netbrain_config/SP1R1.cfg
 
     SP1R2:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.202
       mgmt-ipv6: 2001:172:30:5::202
-      startup-config: netbrain_config/xr02.cfg
+      startup-config: netbrain_config/SP1R2.cfg
 
     SP1R3:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.203
       mgmt-ipv6: 2001:172:30:5::203
-      #startup-config: netbrain_config/xr03.cfg
+      #startup-config: netbrain_config/SP1R3.cfg
 
     SP1R4:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.204
       mgmt-ipv6: 2001:172:30:5::204
-      startup-config: netbrain_config/xr04.cfg
+      startup-config: netbrain_config/SP1R4.cfg
 
     SP1R5:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.205
       mgmt-ipv6: 2001:172:30:5::205
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP1R5.cfg
 
         
     SP2R1:
@@ -48,63 +48,63 @@ topology:
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.206
       mgmt-ipv6: 2001:172:30:5::206
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP2R1.cfg
 
     SP2R2:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.207
       mgmt-ipv6: 2001:172:30:5::207
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP2R2.cfg
 
     SP2R3:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.208
       mgmt-ipv6: 2001:172:30:5::208
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP2R3.cfg
 
     SP2R4:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.209
       mgmt-ipv6: 2001:172:30:5::209
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP2R4.cfg
 
     SP2R5:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.210
       mgmt-ipv6: 2001:172:30:5::210
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/SP2R5.cfg
 
     LEFT6:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.211
       mgmt-ipv6: 2001:172:30:5::211
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/LEFT6.cfg
 
     LEFT7:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.212
       mgmt-ipv6: 2001:172:30:5::212
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/LEFT7.cfg
 
     RIGHT6:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.213
       mgmt-ipv6: 2001:172:30:5::213
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/RIGHT6.cfg
 
     RIGHT7:
       kind: cisco_xrd
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.214
       mgmt-ipv6: 2001:172:30:5::214
-      startup-config: netbrain_config/xr05.cfg
+      startup-config: netbrain_config/RIGHT7.cfg
 
   links:
     - endpoints: ["SP1R1:Gi0-0-0-0", "SP1R4:Gi0-0-0-0"]
