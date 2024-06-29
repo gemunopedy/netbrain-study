@@ -26,7 +26,7 @@ topology:
       image: ios-xr/xrd-control-plane:7.9.2
       mgmt-ipv4: 172.30.5.203
       mgmt-ipv6: 2001:172:30:5::203
-      #startup-config: netbrain_config/SP1R3.cfg
+      startup-config: netbrain_config/SP1R3.cfg
 
     SP1R4:
       kind: cisco_xrd
